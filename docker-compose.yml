@@ -1,12 +1,12 @@
 services:
   mysql:
     user: "${UID}:${GID}" 
-    image: mysql:latest
+    image: mysql:5.7
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: devops
-      MYSQL_USER: root
+      MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     volumes:
       - ./mysql-data:/var/lib/mysql
@@ -21,8 +21,8 @@ services:
       start_period: 60s
 
   flask-app:
-    image: shubhamj2024/two-tier-flask-app:latest
-    container_name: flask-app-${BUILD_ID}
+    image: trainwithshubham/two-tier-flask-app:latest
+    container_name: flask-app
     ports:
       - "5000:5000"
     environment:
