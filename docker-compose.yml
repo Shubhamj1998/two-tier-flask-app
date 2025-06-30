@@ -1,7 +1,7 @@
 services:
   mysql:
     user: "${UID}:${GID}" 
-    image: mysql:latest
+    image: mysql:9.3.0
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -44,3 +44,6 @@ services:
 
 networks:
   twotier:
+volume:
+  ./mysql-data:
+  
