@@ -5,7 +5,7 @@ metadata:
   labels:
     app: two-tier-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: two-tier-app
